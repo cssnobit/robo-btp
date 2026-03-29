@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$main-font: 'Segoe UI', sans-serif;
+$main-bg-color: #f5f5f5;
+$white-color: #fff;
+
+body {
+    font-family: $main-font;
+    background-color: $main-bg-color;
+    padding: 30px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: $white-color;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+    .container {
+        .header-tabela {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        div.cronometro {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+
+            .middle #prox-att {
+                background-color: #f5f5f5;
+                padding: 5px 15px;
+            }
+
+            .right #atualizar-btn {
+                background: #28a745;
+                color: white;
+                border: none;
+                padding: 8px 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 13px;
+                font-weight: 600;
+                transition: all 0.3s;
+            }
+
+            .right #atualizar-btn:hover {
+                background: #218838;
+                transform: translateY(-1px);
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            thead {
+                background: #f8f9fa;
+                border-bottom: 2px solid #e9ecef;
+                text-align: left;
+            }
+
+            th {
+                padding: 15px 20px;
+                font-size: 13px;
+                font-weight: 600;
+                color: #495057;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            td {
+                padding: 15px 20px;
+                border-bottom: 1px solid #e9ecef;
+                font-size: 14px;
+                color: #212529;
+            }
+
+            tr:hover {
+                background: #f8f9fa;
+            }
+        }
+        .footer {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            font-size: 12px;
+            color: #6c757d;
+            text-align: right;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    th, td {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
