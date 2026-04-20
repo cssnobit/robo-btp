@@ -1,9 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
-from config import TODAY, TOMORROW
+from datetime import datetime
 
-def data_colect():
+def data_collect():
     s = requests.Session()
+    now = datetime.now()
+    datetime_req = now.strftime("%d/%m/%Y %H:%M")
 
     # Requisição para a BTP
     url = "https://novo-tas.btp.com.br/ConsultasLivres/RecebimentoExportacao"
@@ -27,9 +29,9 @@ def data_colect():
 
     # Enviando no corpo do HTML os filtros para a pesquisa dos navios
     payload = {
-        "tpPesquisa": "6",
-        "dtInicial": TODAY.strftime("%d/%m/%Y"),
-        "dtFinal": TOMORROW.strftime("%d/%m/%Y"),
+        "tpPesquisa": "0",
+        "dtInicial": "",
+        "dtFinal": "",
         "Viagem": "",
         "Servico": "0"
     }
@@ -44,6 +46,6 @@ def data_colect():
 
     resp_post = s.post(url_post, data=payload, headers=headers)
 
-    print("STATUS POST: ", resp_post.status_code)
+    print(f"{datetime_req} - STATUS POST: {resp_post.status_code}")
 
     return resp_post.text

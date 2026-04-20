@@ -7,11 +7,21 @@
 $main-font: 'Segoe UI', sans-serif;
 $main-bg-color: #f5f5f5;
 $white-color: #fff;
+$legenda-gate-confirmado-color: #f8e88a;
+$legenda-janela-disponivel-color: #b8f3c6;
 
 body {
     font-family: $main-font;
     background-color: $main-bg-color;
     padding: 30px;
+}
+
+.gate-confirmado {
+    background-color: $legenda-gate-confirmado-color;
+}
+
+.janela-disponivel {
+    background-color: $legenda-janela-disponivel-color;
 }
 
 main {
@@ -24,24 +34,32 @@ main {
 
     .container {
         .header-tabela {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 25px 30px;
+            background-color: #f4f4f4;
+            color: #000;
+            padding: 9px 30px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.03rem;
         }
 
         div.cronometro {
             display: flex;
             justify-content: space-around;
+            align-items: center;
             padding: 10px 0;
+            margin-bottom: 10px;
+            background-color: #fffafa;
 
             .middle #prox-att {
-                background-color: #f5f5f5;
+                background-color: #f8f9fa;
                 padding: 5px 15px;
             }
 
             .right #atualizar-btn {
-                background: #28a745;
+                background: #327373;
                 color: white;
                 border: none;
                 padding: 8px 20px;
@@ -53,9 +71,36 @@ main {
             }
 
             .right #atualizar-btn:hover {
-                background: #218838;
+                background: #B0BF3B;
                 transform: translateY(-1px);
             }
+        }
+
+        div.legenda-cores {
+            gap: 27px;
+            display: flex;
+            align-items: center;
+            margin-left: 3%;
+            margin-bottom: 10px;
+
+            span.legenda-navio {
+                display: flex;
+                align-items: center;
+            }
+
+            span.cor-navio {
+                width: 20px;
+                height: 15px;
+                display: inline-block;
+                margin-right: 5px;
+                border: solid 0.5px;
+            }
+        }
+
+        .loading-row {
+            opacity: 0.4;
+            filter: blur(1px);
+            transition: all 0.3s ease;
         }
 
         table {
@@ -63,16 +108,14 @@ main {
             border-collapse: collapse;
 
             thead {
-                background: #f8f9fa;
                 border-bottom: 2px solid #e9ecef;
                 text-align: left;
             }
 
             th {
                 padding: 15px 20px;
-                font-size: 13px;
+                font-size: 0.85rem;
                 font-weight: 600;
-                color: #495057;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
             }

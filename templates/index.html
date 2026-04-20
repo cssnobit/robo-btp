@@ -6,12 +6,12 @@
     <title>Sistema de Monitoramento GATE-BTP</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <link rel="stylesheet" href="../static/styles/style.css">
-</head>
 <body>
     <main>
         <div class="container">
             <div class="header-tabela">
-                <h2>BTP - Monitoramento de Abertura de Gate</h2>
+                <img src="../static/images/logo-btp.png" alt="logo btp">
+                <h2>Monitoramento de Janelas de Navios BTP</h2>
             </div>
 
             <div class="cronometro">
@@ -28,6 +28,12 @@
                 </div>
             </div>
 
+            <div class="legenda-cores">
+                <span class="legenda-navio"><span class="cor-navio"></span>Previsão de Gate</span>
+                <span class="legenda-navio"><span class="cor-navio gate-confirmado"></span>Gate confirmado</span>
+                <span class="legenda-navio"><span class="cor-navio janela-disponivel"></span>Janela disponível</span>
+            </div>
+
             <table id="tabela-navios">
                 <thead>
                     <tr>
@@ -36,6 +42,7 @@
                         <th>Viagem</th>
                         <th>Gate Dry</th>
                         <th>Deadline</th>
+                        <th>Janela Disponível</th>
                     </tr>
                 </thead>
                 <tbody>

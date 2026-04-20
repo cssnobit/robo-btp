@@ -93,12 +93,10 @@ http://localhost:5000
 
 ---
 
-## 📈 Possíveis melhorias
+## 📈 Atualizaçao 1.1
 
-* Destaque visual para novos gates
+* Adicionado destaque visual para novos gates
 * Cache para otimização de requisições
-* Dashboard com layout aprimorado
-* Deploy como serviço no servidor
 
 ---
 
